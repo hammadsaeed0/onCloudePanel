@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to AgentFlow brand colors - Ink background with teal and parrot accents */
+  --background: #0b1220; /* Ink */
+  --foreground: #ffffff; /* White */
+  --card: rgba(255, 255, 255, 0.05); /* Glassmorphism effect */
+  --card-foreground: #ffffff;
+  --popover: rgba(255, 255, 255, 0.1);
+  --popover-foreground: #ffffff;
+  --primary: #006d77; /* Teal 700 */
+  --primary-foreground: #ffffff;
+  --secondary: #25d366; /* Parrot 600 */
+  --secondary-foreground: #0b1220;
+  --muted: #374151; /* Neutral 700 */
+  --muted-foreground: #d1d5db; /* Neutral 300 */
+  --accent: #219ebc; /* Teal 500 */
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #8ecae6; /* Teal 300 */
+  --chart-1: #006d77; /* Teal 700 */
+  --chart-2: #25d366; /* Parrot 600 */
+  --chart-3: #219ebc; /* Teal 500 */
+  --chart-4: #9ef01a; /* Parrot 400 */
+  --chart-5: #8ecae6; /* Teal 300 */
+  --radius: 0.75rem;
+  --sidebar: rgba(11, 18, 32, 0.95);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #006d77;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #25d366;
+  --sidebar-accent-foreground: #0b1220;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #8ecae6;
+
+  /* Added AgentFlow brand gradients */
+  --gradient-core-subtle: linear-gradient(135deg, #006d77, #023047);
+  --gradient-core-vibrant: linear-gradient(135deg, #219ebc, #006d77);
+  --gradient-cta-subtle: linear-gradient(135deg, #25d366, #38b000);
+  --gradient-cta-lively: linear-gradient(135deg, #9ef01a, #25d366);
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: #ffffff;
+  --popover: rgba(255, 255, 255, 0.1);
+  --popover-foreground: #ffffff;
+  --primary: #219ebc;
+  --primary-foreground: #0b1220;
+  --secondary: #25d366;
+  --secondary-foreground: #0b1220;
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
+  --accent: #8ecae6;
+  --accent-foreground: #0b1220;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #8ecae6;
+  --chart-1: #006d77;
+  --chart-2: #25d366;
+  --chart-3: #219ebc;
+  --chart-4: #9ef01a;
+  --chart-5: #8ecae6;
+  --sidebar: rgba(11, 18, 32, 0.95);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #219ebc;
+  --sidebar-primary-foreground: #0b1220;
+  --sidebar-accent: #25d366;
+  --sidebar-accent-foreground: #0b1220;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #8ecae6;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom utility classes for AgentFlow gradients */
+@layer utilities {
+  .bg-gradient-core-subtle {
+    background: var(--gradient-core-subtle);
+  }
+  .bg-gradient-core-vibrant {
+    background: var(--gradient-core-vibrant);
+  }
+  .bg-gradient-cta-subtle {
+    background: var(--gradient-cta-subtle);
+  }
+  .bg-gradient-cta-lively {
+    background: var(--gradient-cta-lively);
+  }
+  .text-gradient-cta-lively {
+    background: var(--gradient-cta-lively);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-core-vibrant {
+    background: var(--gradient-core-vibrant);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glassmorphism {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  /* Added better contrast glassmorphism for navigation */
+  .glassmorphism-nav {
+    backdrop-filter: blur(10px);
+    background: rgba(11, 18, 32, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  /* Added high contrast glassmorphism for cards */
+  .glassmorphism-card {
+    backdrop-filter: blur(10px);
+    background: rgba(11, 18, 32, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  /* Added high contrast text utilities */
+  .text-high-contrast {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  /* Added high contrast muted text */
+  .text-muted-high-contrast {
+    color: #e5e7eb;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
