@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { MessageCircle, Twitter, Linkedin, Github } from "lucide-react"
 
 export function Footer() {
@@ -23,7 +24,7 @@ export function Footer() {
               <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-secondary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -34,14 +35,14 @@ export function Footer() {
             <h3 className="font-semibold text-high-contrast mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#features" className="text-muted-foreground hover:text-accent transition-colors">
+                <Link href="/features" className="text-muted-foreground hover:text-accent transition-colors">
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#pricing" className="text-muted-foreground hover:text-accent transition-colors">
+                <Link href="/pricing" className="text-muted-foreground hover:text-accent transition-colors">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
@@ -61,14 +62,14 @@ export function Footer() {
             <h3 className="font-semibold text-high-contrast mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
+                <Link href="/about" className="text-muted-foreground hover:text-accent transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-muted-foreground hover:text-accent transition-colors">
+                <Link href="/contact" className="text-muted-foreground hover:text-accent transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
@@ -85,14 +86,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© 2024 AgentFlow. Powerd by Spark Digital Media.</p>
+          <p className="text-muted-foreground text-sm">© 2025 AgentFlow. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+            <Link href="/privacy" className="text-muted-foreground hover:text-accent transition-colors text-sm">
               Privacy Policy
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+            </Link>
+            <Link href="/terms" className="text-muted-foreground hover:text-accent transition-colors text-sm">
               Terms of Service
-            </a>
+            </Link>
             <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
               Cookie Policy
             </a>
