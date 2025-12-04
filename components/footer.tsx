@@ -1,102 +1,119 @@
 "use client"
 
 import Link from "next/link"
-import { MessageCircle, Twitter, Linkedin, Github } from "lucide-react"
+import Image from "next/image"
+import { MessageCircle } from "lucide-react"
+
+const LOGO_URL = "https://res.cloudinary.com/dirfoibin/image/upload/v1764831818/ikknfcc6sgaiku99wu4o.png"
 
 export function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
-    <footer className="bg-background border-t border-border py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="text-2xl font-bold text-gradient-core-vibrant mb-4">AgentFlow</div>
-            <p className="text-muted-foreground mb-6 max-w-md">
+    <footer className="relative border-t border-border/50 bg-gradient-to-b from-background to-muted/20">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pattern-dots opacity-20"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main footer content */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand column */}
+          <div className="md:col-span-1">
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src={LOGO_URL}
+                alt="AgentFlow"
+                width={160}
+                height={45}
+                className="h-14 w-auto object-contain"
+              />
+            </Link>
+            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
               Transform your WhatsApp into a powerful sales engine with our advanced automation and CRM platform.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <MessageCircle className="h-5 w-5" />
-              </a>
-            </div>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat with us on WhatsApp
+            </a>
           </div>
 
-          {/* Product */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-high-contrast mb-4">Product</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-foreground mb-4 text-sm">Quick Links</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/features" className="text-muted-foreground hover:text-accent transition-colors">
+                <button 
+                  onClick={() => scrollToSection("features")}
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
                   Features
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-accent transition-colors">
+                <button 
+                  onClick={() => scrollToSection("pricing")}
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
                   Pricing
-                </Link>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                  API
-                </a>
+                <button 
+                  onClick={() => scrollToSection("contact")}
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  Contact
+                </button>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                  Integrations
+                <a 
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  Sign In
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-high-contrast mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-foreground mb-4 text-sm">Contact</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-accent transition-colors">
-                  About Us
-                </Link>
+                <p className="text-sm text-muted-foreground">
+                  Email: hello@agentflow.com
+                </p>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-accent transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                  Careers
-                </a>
+                <p className="text-sm text-muted-foreground">
+                  WhatsApp: +92 XXX XXXXXXX
+                </p>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© 2025 AgentFlow. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-              Terms of Service
-            </Link>
-            <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-              Cookie Policy
+        {/* Bottom bar */}
+        <div className="py-6 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm flex items-center gap-2">
+            Powered by{" "}
+            <a href="#" className="font-semibold text-accent hover:text-secondary transition-colors">
+              Spark Digital Media
             </a>
+          </p>
+          <div className="flex items-center gap-6">
+            <span className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} AgentFlow. All rights reserved.
+            </span>
           </div>
         </div>
       </div>

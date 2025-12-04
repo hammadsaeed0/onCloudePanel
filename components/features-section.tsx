@@ -1,86 +1,149 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, Users, BarChart3, Zap, Shield, Smartphone, Bot, Target, Clock } from "lucide-react"
+import { 
+  MessageCircle, 
+  Bot, 
+  Megaphone, 
+  Users, 
+  MessageSquare, 
+  BarChart3, 
+  Plug, 
+  Target, 
+  Calendar, 
+  Globe, 
+  Shield, 
+  Sparkles,
+  MoreHorizontal
+} from "lucide-react"
 
 export function FeaturesSection() {
   const features = [
     {
-      icon: <Bot className="h-8 w-8" />,
-      title: "Smart Chatbots",
-      description:
-        "AI-powered chatbots that understand context and provide intelligent responses to customer queries 24/7.",
+      icon: MessageCircle,
+      title: "Official WhatsApp API (Cloud)",
+      description: "Online chat + delivered/seen/failed tracking for complete message visibility.",
+      gradient: "from-green-500 to-emerald-500",
     },
     {
-      icon: <MessageCircle className="h-8 w-8" />,
-      title: "Broadcast Messaging",
-      description: "Send targeted messages to thousands of customers instantly with personalized content and media.",
+      icon: Bot,
+      title: "Automated Chatbot",
+      description: "Drag & drop builder with AI/NLU & branching for intelligent conversations.",
+      gradient: "from-cyan-500 to-blue-500",
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Contact Management",
-      description: "Organize and manage all your WhatsApp contacts with advanced CRM features and segmentation.",
+      icon: Megaphone,
+      title: "Broadcasting & Phonebook",
+      description: "Campaign sends; segment lists & tags for targeted messaging.",
+      gradient: "from-purple-500 to-pink-500",
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
-      title: "Analytics Dashboard",
-      description: "Track message performance, engagement rates, and conversion metrics with detailed analytics.",
+      icon: Users,
+      title: "Chats & Agent Management",
+      description: "Assign, prioritize, and handover to humans fast for seamless support.",
+      gradient: "from-orange-500 to-red-500",
     },
     {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Workflow Automation",
-      description: "Create custom automation workflows to handle leads, follow-ups, and customer support efficiently.",
+      icon: MessageSquare,
+      title: "Dynamic Chat Widget",
+      description: "Add WhatsApp chat to your website for instant customer connection.",
+      gradient: "from-teal-500 to-cyan-500",
     },
     {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Secure & Compliant",
-      description: "Enterprise-grade security with end-to-end encryption and GDPR compliance for data protection.",
+      icon: BarChart3,
+      title: "Dashboard & Analytics",
+      description: "Track replies, conversions, and response times with detailed insights.",
+      gradient: "from-indigo-500 to-purple-500",
     },
     {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Multi-Device Sync",
-      description: "Access your WhatsApp business from any device with real-time synchronization across platforms.",
+      icon: Plug,
+      title: "API & Integrations",
+      description: "Connect Google Sheets, CRMs, or your DB for seamless data flow.",
+      gradient: "from-rose-500 to-pink-500",
     },
     {
-      icon: <Target className="h-8 w-8" />,
-      title: "Lead Scoring",
-      description: "Automatically score and prioritize leads based on engagement and behavior patterns.",
+      icon: Target,
+      title: "Lead Gen & Qualification",
+      description: "Capture details and auto-segment users for efficient lead management.",
+      gradient: "from-yellow-500 to-orange-500",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
-      title: "Auto-Responders",
-      description: "Set up intelligent auto-responses for common queries and out-of-office messages.",
+      icon: Calendar,
+      title: "Booking & Reminders",
+      description: "Schedule, confirm, and auto-follow up appointments effortlessly.",
+      gradient: "from-blue-500 to-indigo-500",
+    },
+    {
+      icon: Globe,
+      title: "Multilingual Support",
+      description: "Talk in Urdu, English, Arabic and more languages.",
+      gradient: "from-emerald-500 to-teal-500",
+    },
+    {
+      icon: Shield,
+      title: "Compliance & Number Health",
+      description: "Opt-in/STOP handling to reduce bans and maintain account health.",
+      gradient: "from-slate-500 to-slate-600",
+    },
+    {
+      icon: Sparkles,
+      title: "Interactive Design",
+      description: "Clean UI for agents & customers with modern interface.",
+      gradient: "from-pink-500 to-rose-500",
     },
   ]
 
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pattern-dots opacity-30"></div>
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] -translate-y-1/2"></div>
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism mb-6">
+            <Sparkles className="h-4 w-4 text-accent" />
+            <span className="text-sm text-muted-foreground">Core Features</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-balance mb-6">
-            Powerful Features for <span className="text-gradient-core-vibrant">WhatsApp Success</span>
+            Everything You Need for{" "}
+            <span className="text-gradient-core-vibrant">WhatsApp Success</span>
           </h2>
-          <p className="text-xl text-muted-foreground text-pretty max-w-3xl mx-auto">
-            Everything you need to transform WhatsApp into a powerful business tool that drives growth and customer
-            satisfaction.
+          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
+            Powerful features to transform WhatsApp into your ultimate business tool for customer engagement and sales growth.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Features grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="glassmorphism border-border hover:border-accent transition-all duration-300 group"
+              className="glassmorphism-card-hover border-0 group cursor-pointer"
             >
               <CardContent className="p-6">
-                <div className="text-secondary group-hover:text-accent transition-colors duration-300 mb-4">
-                  {feature.icon}
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-high-contrast">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold mb-2 text-high-contrast group-hover:text-accent transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Much More */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-3 glassmorphism-card rounded-2xl px-8 py-4">
+            <MoreHorizontal className="h-6 w-6 text-secondary" />
+            <span className="text-lg font-semibold text-high-contrast">Much More Features Included</span>
+          </div>
         </div>
       </div>
     </section>

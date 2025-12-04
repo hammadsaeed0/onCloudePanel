@@ -2,113 +2,144 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Check, Star } from "lucide-react"
+import { Check, X, Star, Zap, Crown } from "lucide-react"
 
 export function PricingSection() {
   const plans = [
     {
-      name: "Starter",
-      price: "$29",
-      period: "/month",
-      description: "Perfect for small businesses getting started with WhatsApp automation",
+      name: "STARTER",
+      price: "2,200",
+      period: "/mo",
+      duration: "30 Days",
+      description: "Perfect for small businesses getting started",
+      icon: Star,
       features: [
-        "Up to 1,000 contacts",
-        "Basic chatbot responses",
-        "5 automation workflows",
-        "Email support",
-        "Basic analytics",
-        "WhatsApp Web integration",
+        { name: "Contact limit (1,000)", included: true },
+        { name: "1 QR Account Login", included: true },
+        { name: "Rest API (WA QR)", included: true },
+        { name: "Agent System limit (1)", included: true },
+        { name: "Cloud API Access", included: true },
+        { name: "Chat Note & Tag", included: true },
+        { name: "Live Chat Widget", included: false },
+        { name: "AI Integration", included: false },
+        { name: "Campaign Schedule", included: false },
       ],
-      buttonText: "Start Free Trial",
+      buttonText: "7 Days Free Trial",
       popular: false,
+      gradient: "from-slate-500 to-slate-600",
     },
     {
-      name: "Professional",
-      price: "$79",
-      period: "/month",
-      description: "Ideal for growing businesses that need advanced automation features",
+      name: "GROWTH",
+      price: "1,900",
+      period: "/mo",
+      duration: "180 Days",
+      description: "Ideal for growing businesses with more needs",
+      icon: Zap,
       features: [
-        "Up to 10,000 contacts",
-        "Advanced AI chatbots",
-        "Unlimited workflows",
-        "Priority support",
-        "Advanced analytics",
-        "Multi-device access",
-        "Custom integrations",
-        "Lead scoring",
-        "Broadcast messaging",
+        { name: "Contact limit (5,000)", included: true },
+        { name: "3 QR Account Login", included: true },
+        { name: "Rest API (WA QR)", included: true },
+        { name: "Agent System limit (5)", included: true },
+        { name: "Cloud API Access", included: true },
+        { name: "Chat Note & Tag", included: true },
+        { name: "Live Chat Widget", included: true },
+        { name: "AI Integration", included: false },
+        { name: "Bulk Messaging", included: true },
+        { name: "Campaign Schedule", included: false },
       ],
-      buttonText: "Get Started",
+      buttonText: "7 Days Free Trial",
       popular: true,
+      gradient: "from-green-500 to-emerald-500",
     },
     {
-      name: "Enterprise",
-      price: "$199",
-      period: "/month",
-      description: "For large organizations requiring maximum scalability and customization",
+      name: "SCALE",
+      price: "1,800",
+      period: "/mo",
+      duration: "365 Days",
+      description: "For businesses requiring maximum scalability",
+      icon: Crown,
       features: [
-        "Unlimited contacts",
-        "Custom AI training",
-        "White-label solution",
-        "Dedicated account manager",
-        "Custom reporting",
-        "API access",
-        "SSO integration",
-        "Advanced security",
-        "Custom workflows",
-        "24/7 phone support",
+        { name: "Contact limit (Unlimited)", included: true },
+        { name: "5 QR Account Login", included: true },
+        { name: "Rest API (WA QR)", included: true },
+        { name: "Agent System limit (5)", included: true },
+        { name: "Cloud API Access", included: true },
+        { name: "Live Chat Widget", included: true },
+        { name: "AI Integration", included: true },
+        { name: "Bulk Messaging", included: true },
+        { name: "Much More Features", included: true },
       ],
-      buttonText: "Contact Sales",
+      buttonText: "7 Days Free Trial",
       popular: false,
+      gradient: "from-purple-500 to-pink-500",
     },
   ]
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 pattern-dots opacity-30"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-[150px]"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism mb-6">
+            <Crown className="h-4 w-4 text-accent" />
+            <span className="text-sm text-muted-foreground">Simple Pricing</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-balance mb-6">
-            Simple, Transparent <span className="text-gradient-core-vibrant">Pricing</span>
+            Choose Your{" "}
+            <span className="text-gradient-core-vibrant">Growth Plan</span>
           </h2>
-          <p className="text-xl text-muted-foreground text-pretty max-w-3xl mx-auto">
-            Choose the perfect plan for your business. All plans include a 14-day free trial with no credit card
-            required.
+          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
+            Transparent pricing in PKR with no hidden fees. All plans include a 7-day free trial.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        {/* Pricing cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`glassmorphism border-border hover:border-accent transition-all duration-300 relative ${
-                plan.popular ? "border-accent scale-105" : ""
+              className={`relative border-0 overflow-hidden transition-all duration-300 ${
+                plan.popular 
+                  ? "glassmorphism-card-hover lg:scale-105 glow-secondary" 
+                  : "glassmorphism-card-hover"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-gradient-cta-lively text-black font-semibold px-4 py-1">
-                    <Star className="h-4 w-4 mr-1" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+              )}
+              
+              {plan.popular && (
+                <div className="absolute -top-0 right-6">
+                  <div className="bg-gradient-cta-lively text-white text-xs font-semibold px-4 py-1 rounded-b-lg">
                     Most Popular
-                  </Badge>
+                  </div>
                 </div>
               )}
 
-              <CardHeader className="text-center pb-8">
+              <CardHeader className="text-center pb-6 pt-8">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${plan.gradient} flex items-center justify-center mx-auto mb-4`}>
+                  <plan.icon className="h-7 w-7 text-white" />
+                </div>
                 <h3 className="text-2xl font-bold text-high-contrast mb-2">{plan.name}</h3>
-                <div className="mb-4">
-                  <span className="text-4xl md:text-5xl font-bold text-high-contrast">{plan.price}</span>
+                <div className="mb-2">
+                  <span className="text-sm text-muted-foreground">PKR</span>
+                  <span className="text-4xl md:text-5xl font-bold text-high-contrast ml-1">{plan.price}</span>
                   <span className="text-muted-foreground text-lg">{plan.period}</span>
                 </div>
-                <p className="text-muted-foreground text-pretty">{plan.description}</p>
+                <p className="text-secondary text-sm font-medium">{plan.duration}</p>
+                <p className="text-muted-foreground text-sm mt-2">{plan.description}</p>
               </CardHeader>
 
               <CardContent className="pt-0">
                 <Button
-                  className={`w-full mb-6 font-semibold ${
+                  className={`w-full mb-6 font-semibold py-6 rounded-xl ${
                     plan.popular
-                      ? "bg-gradient-cta-lively hover:bg-gradient-cta-subtle text-black"
-                      : "bg-primary hover:bg-primary/90 text-white"
+                      ? "btn-premium text-white"
+                      : "bg-muted hover:bg-muted/80 text-foreground"
                   }`}
                   size="lg"
                 >
@@ -117,9 +148,19 @@ export function PricingSection() {
 
                 <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <Check className="h-5 w-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      {feature.included ? (
+                        <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${plan.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                      ) : (
+                        <div className="w-5 h-5 rounded-full bg-muted/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <X className="h-3 w-3 text-muted-foreground/50" />
+                        </div>
+                      )}
+                      <span className={`text-sm ${feature.included ? 'text-muted-foreground' : 'text-muted-foreground/50'}`}>
+                        {feature.name}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -128,15 +169,19 @@ export function PricingSection() {
           ))}
         </div>
 
-        <div className="text-center">
-          <p className="text-muted-foreground mb-4">
-            Need a custom solution? We offer tailored packages for enterprises with specific requirements.
+        {/* Bottom CTA */}
+        <div className="text-center glassmorphism-card rounded-2xl p-8 max-w-3xl mx-auto">
+          <h3 className="text-xl font-semibold text-high-contrast mb-2">
+            Need a custom solution?
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            Contact us for enterprise packages tailored to your specific requirements.
           </p>
           <Button
             variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-black bg-transparent"
+            className="border-accent/50 text-accent hover:bg-accent hover:text-white rounded-xl px-6"
           >
-            Contact Our Sales Team
+            Contact Sales
           </Button>
         </div>
       </div>
