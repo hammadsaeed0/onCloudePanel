@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="#"
+                  href="https://oncloudpanel.com/user"
                   className="text-sm text-[#374151] hover:text-[#006D77] transition-colors"
                 >
                   Sign In
@@ -95,7 +95,7 @@ export function Footer() {
               </li>
               <li>
                 <p className="text-sm text-[#374151]">
-                  WhatsApp: +92 330 3040088
+                  WhatsApp: +92 3091456953
                 </p>
               </li>
             </ul>
@@ -106,7 +106,7 @@ export function Footer() {
         <div className="py-6 border-t border-[#023047]/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#374151] text-sm flex items-center gap-2">
             Powered by{" "}
-            <a href="#" className="font-semibold text-[#006D77] hover:text-[#9EF01A] transition-colors">
+            <a href="https://www.sparkdigitalmedia.online/" className="font-semibold text-[#006D77] hover:text-[#9EF01A] transition-colors">
               Spark Digital Media
             </a>
           </p>

@@ -35,7 +35,7 @@ export function ContactSection() {
       icon: MessageSquare,
       title: "WhatsApp",
       description: "Chat with us directly",
-      value: "+92 330 3040088",
+      value: "+92 3091456953",
       gradient: "from-[#9EF01A] to-[#7BC410]",
       iconColor: "text-[#023047]",
     },
@@ -50,7 +50,7 @@ export function ContactSection() {
       icon: Phone,
       title: "Phone",
       description: "Mon-Sat 10am to 6pm",
-      value: "+92 330 3040088",
+      value: "+92 3091456953",
       gradient: "from-[#023047] to-[#006D77]",
     },
   ]
@@ -141,7 +141,7 @@ export function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="bg-[#F3F4F6] border-[#023047]/10 focus:border-[#006D77] rounded-xl"
-                    placeholder="+92 330 3040088"
+                    placeholder="+92 3091456953"
                   />
                 </div>
 

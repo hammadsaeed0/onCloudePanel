@@ -74,7 +74,7 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a 
-              href="#"
+              href="https://oncloudpanel.com/user"
               className="text-sm font-medium text-[#374151] hover:text-[#023047] transition-colors"
             >
               Sign In
@@ -121,7 +121,7 @@ export function Navigation() {
             </button>
             <div className="pt-4 border-t border-[#023047]/10 mt-4 space-y-2">
               <a 
-                href="#"
+                href="https://oncloudpanel.com/user"
                 className="block px-4 py-3 text-[#023047] hover:bg-[#f1f7fa] rounded-lg transition-colors"
               >
                 Sign In
