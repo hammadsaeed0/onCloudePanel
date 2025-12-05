@@ -15,9 +15,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative border-t border-border/50 bg-gradient-to-b from-background to-muted/20">
+    <footer className="relative border-t border-[#023047]/10 bg-white">
       {/* Background decoration */}
-      <div className="absolute inset-0 pattern-dots opacity-20"></div>
+      <div className="absolute inset-0 pattern-dots opacity-30"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main footer content */}
@@ -33,12 +33,12 @@ export function Footer() {
                 className="h-14 w-auto object-contain"
               />
             </Link>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
+            <p className="text-[#374151] text-sm mb-6 max-w-xs">
               Transform your WhatsApp into a powerful sales engine with our advanced automation and CRM platform.
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[#374151] hover:text-[#006D77] transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
               Chat with us on WhatsApp
@@ -47,12 +47,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-sm">Quick Links</h3>
+            <h3 className="font-semibold text-[#023047] mb-4 text-sm">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection("features")}
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  className="text-sm text-[#374151] hover:text-[#006D77] transition-colors"
                 >
                   Features
                 </button>
@@ -60,7 +60,7 @@ export function Footer() {
               <li>
                 <button 
                   onClick={() => scrollToSection("pricing")}
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  className="text-sm text-[#374151] hover:text-[#006D77] transition-colors"
                 >
                   Pricing
                 </button>
@@ -68,7 +68,7 @@ export function Footer() {
               <li>
                 <button 
                   onClick={() => scrollToSection("contact")}
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  className="text-sm text-[#374151] hover:text-[#006D77] transition-colors"
                 >
                   Contact
                 </button>
@@ -76,7 +76,7 @@ export function Footer() {
               <li>
                 <a 
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  className="text-sm text-[#374151] hover:text-[#006D77] transition-colors"
                 >
                   Sign In
                 </a>
@@ -86,16 +86,16 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-sm">Contact</h3>
+            <h3 className="font-semibold text-[#023047] mb-4 text-sm">Contact</h3>
             <ul className="space-y-3">
               <li>
-                <p className="text-sm text-muted-foreground">
-                  Email: hello@agentflow.com
+                <p className="text-sm text-[#374151]">
+                  Email: agentflowcloud@gmail.com
                 </p>
               </li>
               <li>
-                <p className="text-sm text-muted-foreground">
-                  WhatsApp: +92 XXX XXXXXXX
+                <p className="text-sm text-[#374151]">
+                  WhatsApp: +92 330 3040088
                 </p>
               </li>
             </ul>
@@ -103,15 +103,15 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm flex items-center gap-2">
+        <div className="py-6 border-t border-[#023047]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[#374151] text-sm flex items-center gap-2">
             Powered by{" "}
-            <a href="#" className="font-semibold text-accent hover:text-secondary transition-colors">
+            <a href="#" className="font-semibold text-[#006D77] hover:text-[#9EF01A] transition-colors">
               Spark Digital Media
             </a>
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs text-[#374151]">
               © {new Date().getFullYear()} AgentFlow. All rights reserved.
             </span>
           </div>

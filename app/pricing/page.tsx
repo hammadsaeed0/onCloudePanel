@@ -14,7 +14,7 @@ export default function PricingPage() {
       period: "/mo",
       duration: "30 Days",
       description: "Perfect for small businesses",
-      gradient: "from-slate-500 to-slate-600",
+      gradient: "from-[#374151] to-[#1f2937]",
       features: [
         { name: "Contact limit (1,000)", included: true },
         { name: "1 QR Account Login", included: true },
@@ -35,7 +35,8 @@ export default function PricingPage() {
       period: "/mo",
       duration: "180 Days",
       description: "For growing businesses",
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "from-[#9EF01A] to-[#7BC410]",
+      iconColor: "text-[#023047]",
       popular: true,
       features: [
         { name: "Contact limit (5,000)", included: true },
@@ -58,7 +59,7 @@ export default function PricingPage() {
       period: "/mo",
       duration: "365 Days",
       description: "For large organizations",
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-[#023047] to-[#006D77]",
       features: [
         { name: "Contact limit (Unlimited)", included: true },
         { name: "5 QR Account Login", included: true },
@@ -94,42 +95,42 @@ export default function PricingPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pattern-grid opacity-30"></div>
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/15 rounded-full blur-[120px]"></div>
+        <div className="absolute inset-0 pattern-grid opacity-40"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#9EF01A]/10 rounded-full blur-[120px]"></div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism mb-6">
-            <Crown className="h-4 w-4 text-accent" />
-            <span className="text-sm text-muted-foreground">Pricing</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f1f7fa] border border-[#023047]/10 mb-6">
+            <Crown className="h-4 w-4 text-[#006D77]" />
+            <span className="text-sm text-[#374151]">Pricing</span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-            Simple <span className="text-gradient-core-vibrant">Pricing</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance text-[#023047]">
+            Simple <span className="text-[#006D77]">Pricing</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
+          <p className="text-lg md:text-xl text-[#374151] mb-8 max-w-2xl mx-auto text-pretty">
             Transparent pricing in PKR. All plans include a 7-day free trial.
           </p>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[#f1f7fa]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`glassmorphism-card-hover rounded-2xl p-6 relative ${plan.popular ? 'lg:scale-105 border border-secondary/50 glow-secondary' : ''}`}
+                className={`bg-white rounded-2xl p-6 relative border ${plan.popular ? 'border-[#9EF01A] shadow-xl shadow-[#9EF01A]/20 lg:scale-105' : 'border-[#023047]/10 shadow-sm hover:shadow-lg'} transition-all duration-300`}
               >
                 {plan.popular && (
                   <>
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-t-2xl"></div>
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#9EF01A] to-[#7BC410] rounded-t-2xl"></div>
                     <div className="absolute -top-0 right-4">
-                      <div className="bg-gradient-cta-lively text-white text-xs font-semibold px-3 py-1 rounded-b-lg">
+                      <div className="bg-gradient-to-r from-[#9EF01A] to-[#7BC410] text-[#023047] text-xs font-semibold px-3 py-1 rounded-b-lg">
                         Most Popular
                       </div>
                     </div>
@@ -138,27 +139,27 @@ export default function PricingPage() {
                 
                 <div className="text-center mb-6 pt-2">
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${plan.gradient} flex items-center justify-center mx-auto mb-4`}>
-                    <plan.icon className="w-7 h-7 text-white" />
+                    <plan.icon className={`w-7 h-7 ${plan.iconColor || 'text-white'}`} />
                   </div>
-                  <h3 className="text-2xl font-bold text-high-contrast mb-1">{plan.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-[#023047] mb-1">{plan.name}</h3>
+                  <p className="text-[#374151] text-sm mb-4">{plan.description}</p>
                   <div className="mb-2">
-                    <span className="text-sm text-muted-foreground">PKR</span>
-                    <span className="text-4xl font-bold text-high-contrast ml-1">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-sm text-[#374151]">PKR</span>
+                    <span className="text-4xl font-bold text-[#023047] ml-1">{plan.price}</span>
+                    <span className="text-[#374151]">{plan.period}</span>
                   </div>
-                  <p className="text-secondary text-sm font-medium">{plan.duration}</p>
+                  <p className="text-[#9EF01A] text-sm font-medium">{plan.duration}</p>
                 </div>
 
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2">
                       {feature.included ? (
-                        <Check className="w-4 h-4 text-secondary flex-shrink-0" />
+                        <Check className="w-4 h-4 text-[#9EF01A] flex-shrink-0" />
                       ) : (
-                        <X className="w-4 h-4 text-muted-foreground/50 flex-shrink-0" />
+                        <X className="w-4 h-4 text-[#9ca3af] flex-shrink-0" />
                       )}
-                      <span className={`text-sm ${feature.included ? 'text-muted-foreground' : 'text-muted-foreground/50'}`}>
+                      <span className={`text-sm ${feature.included ? 'text-[#374151]' : 'text-[#9ca3af]'}`}>
                         {feature.name}
                       </span>
                     </li>
@@ -166,7 +167,7 @@ export default function PricingPage() {
                 </ul>
 
                 <Button 
-                  className={`w-full font-semibold py-5 rounded-xl ${plan.popular ? 'btn-premium text-white' : 'bg-muted hover:bg-muted/80 text-foreground'}`}
+                  className={`w-full font-semibold py-5 rounded-xl ${plan.popular ? 'btn-premium' : 'bg-[#023047] hover:bg-[#006D77] text-white'}`}
                 >
                   {plan.cta}
                 </Button>
@@ -177,21 +178,21 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism mb-6">
-              <HelpCircle className="h-4 w-4 text-accent" />
-              <span className="text-sm text-muted-foreground">FAQ</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f1f7fa] border border-[#023047]/10 mb-6">
+              <HelpCircle className="h-4 w-4 text-[#006D77]" />
+              <span className="text-sm text-[#374151]">FAQ</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-high-contrast">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#023047]">Frequently Asked Questions</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="glassmorphism-card-hover rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-high-contrast mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground text-sm">{faq.answer}</p>
+              <div key={index} className="bg-[#f1f7fa] rounded-2xl p-6 border border-[#023047]/5">
+                <h3 className="text-lg font-bold text-[#023047] mb-3">{faq.question}</h3>
+                <p className="text-[#374151] text-sm">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -199,16 +200,16 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f1f7fa]">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="glassmorphism-card rounded-3xl p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-high-contrast">Ready to Get Started?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+          <div className="bg-[#023047] rounded-3xl p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
+            <p className="text-lg text-white/70 mb-8">
               Start your 7-day free trial today and transform your WhatsApp business.
             </p>
             <Button
               size="lg"
-              className="btn-premium text-white font-semibold px-8 py-6 text-lg rounded-xl"
+              className="btn-premium font-semibold px-8 py-6 text-lg rounded-xl"
             >
               Start Free Trial
               <ArrowRight className="ml-2 h-5 w-5" />
