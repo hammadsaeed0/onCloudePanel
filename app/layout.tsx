@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     description: "Transform WhatsApp into your sales engine with powerful automation and CRM features.",
     type: "website",
   },
+
+  // ⭐ Add your domain verification meta here
+  other: {
+    "facebook-domain-verification": "x0dseel5b8lsv13h7hl084yit74506",
+  },
 }
 
 export default function RootLayout({
