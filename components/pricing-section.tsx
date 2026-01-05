@@ -8,7 +8,7 @@ export function PricingSection() {
   const plans = [
     {
       name: "STARTER",
-      price: "2,200",
+      price: "2200",
       period: "/mo",
       duration: "30 Days",
       description: "Perfect for small businesses getting started",
@@ -30,7 +30,7 @@ export function PricingSection() {
     },
     {
       name: "GROWTH",
-      price: "1,900",
+      price: "2000",
       period: "/mo",
       duration: "180 Days",
       description: "Ideal for growing businesses with more needs",
@@ -54,7 +54,7 @@ export function PricingSection() {
     },
     {
       name: "SCALE",
-      price: "1,800",
+      price: "1900",
       period: "/mo",
       duration: "365 Days",
       description: "For businesses requiring maximum scalability",
